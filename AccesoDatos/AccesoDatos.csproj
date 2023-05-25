@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="Conexion\ConexionODBC.cs" />
     <Compile Include="Conexion\ConexionSQL.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
@@ -53,6 +53,9 @@
       <Project>{f9de44fa-f7c5-48d0-a32f-06fc1e799a2b}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

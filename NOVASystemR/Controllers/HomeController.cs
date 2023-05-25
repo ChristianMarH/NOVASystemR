@@ -1,4 +1,5 @@
 ﻿using AccesoDatos.Conexion;
+using LogicaNegocio;
 using LogicaNegocio.Enum;
 using NOVASystemR.Models;
 using System;
@@ -79,57 +80,57 @@ namespace NOVASystemR.Controllers
         }
 
 
-        //[AllowAnonymous]
-        //[HttpPost]
-        //public ActionResult Login(LoginModel model, string returnUrl)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Entidades.SAI.Usuario oUsuario = new Entidades.SAI.Usuario();
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(LoginModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                Entidades.SAI.Usuario oUsuario = new Entidades.SAI.Usuario();
 
-        //        model.AutenticacionCorrecta = LogicaNegocio.WS_SAI.Seguridad.AutenticarUsuario(model.Dominio, model.CuentaRed, model.Contrasenia);
+                model.AutenticacionCorrecta = LogicaNegocio.WS_SAI.Seguridad.AutenticarUsuario(model.Dominio, model.CuentaRed, model.Contrasenia);
 
-        //        if (model.AutenticacionCorrecta)
-        //        {
-        //            if (Request.UrlReferrer.Query.Contains("red") && (Request.Url.AbsoluteUri.Contains("localhost") || Request.Url.AbsoluteUri.Contains("termxnvadb14/Nova/RRHH/SRH")))
-        //            {
-        //                var a = Request.UrlReferrer.Query.Split('&');
-        //                for (var i = 0; i < a.Length; i++)
-        //                {
-        //                    if (a[i].ToString().Contains("red"))
-        //                    {
-        //                        var k = a[i].ToString().Split('=');
-        //                        model.CuentaRed = k[1];
-        //                    }
-        //                }
-        //            }
-        //            oUsuario = LogicaNegocio.WS_SAI.Seguridad.ObtenerPermisos(model.CuentaRed);
-        //            oUsuario.AutenticacionCorrecta = model.AutenticacionCorrecta;
-        //            Session["AutenticacionCorrecta"] = model.AutenticacionCorrecta;
+                if (model.AutenticacionCorrecta)
+                {
+                    if (Request.UrlReferrer.Query.Contains("red") && (Request.Url.AbsoluteUri.Contains("localhost") || Request.Url.AbsoluteUri.Contains("termxnvadb14/Nova/RRHH/SRH")))
+                    {
+                        var a = Request.UrlReferrer.Query.Split('&');
+                        for (var i = 0; i < a.Length; i++)
+                        {
+                            if (a[i].ToString().Contains("red"))
+                            {
+                                var k = a[i].ToString().Split('=');
+                                model.CuentaRed = k[1];
+                            }
+                        }
+                    }
+                    oUsuario = LogicaNegocio.WS_SAI.Seguridad.ObtenerPermisos(model.CuentaRed);
+                    oUsuario.AutenticacionCorrecta = model.AutenticacionCorrecta;
+                    Session["AutenticacionCorrecta"] = model.AutenticacionCorrecta;
 
-        //            List<PermisosModel> Permisos = Comun.ConvertToList<PermisosModel>(oUsuario.Permisos);
-        //            if (oUsuario.Permisos.Rows.Count > 0)
-        //                Session["Permisos"] = Permisos;
+                    List<PermisosModel> Permisos = Comun.ConvertToList<PermisosModel>(oUsuario.Permisos);
+                    if (oUsuario.Permisos.Rows.Count > 0)
+                        Session["Permisos"] = Permisos;
 
-        //            oUsuario.UsuarioId = (LogicaNegocio.NovaRH.Honorarios.Personal.Consultar(SqlOpciones.Actual, 0, string.Empty, 0, 0, model.CuentaRed).FirstOrDefault() ?? new Entidades.NovaRH.Honorarios.Personal() { PersonalId = oUsuario.UsuarioId }).PersonalId;
+                    oUsuario.UsuarioId = (LogicaNegocio.NovaRH.Honorarios.Personal.Consultar(SqlOpciones.Actual, 0, string.Empty, 0, 0, model.CuentaRed).FirstOrDefault() ?? new Entidades.NovaRH.Honorarios.Personal() { PersonalId = oUsuario.UsuarioId }).PersonalId;
 
-        //            SetUsuarioId(oUsuario.UsuarioId);
-        //            SetNombreUsuario(oUsuario.NombreCompleto);
+                    SetUsuarioId(oUsuario.UsuarioId);
+                    SetNombreUsuario(oUsuario.NombreCompleto);
 
-        //            Session["Foto"] = oUsuario.Foto as byte[];
+                    Session["Foto"] = oUsuario.Foto as byte[];
 
-        //            FormsAuthentication.SetAuthCookie(model.CuentaRed, false);
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            model.AutenticacionCorrecta = false;
-        //            return View(model);
-        //        }
-        //    }
+                    FormsAuthentication.SetAuthCookie(model.CuentaRed, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    model.AutenticacionCorrecta = false;
+                    return View(model);
+                }
+            }
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
 
 
 
