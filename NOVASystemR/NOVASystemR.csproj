@@ -183,6 +183,10 @@
       <Project>{9E384E02-B383-4FEC-8C0E-244982EF1E4D}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{d93e62e6-5e1e-46f0-be8c-86fc1f4aa36e}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
