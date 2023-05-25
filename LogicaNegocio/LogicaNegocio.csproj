@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\SqlOpciones.cs" />
+    <Compile Include="MapaClases.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{9e384e02-b383-4fec-8c0e-244982ef1e4d}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{f9de44fa-f7c5-48d0-a32f-06fc1e799a2b}</Project>
       <Name>Entidades</Name>

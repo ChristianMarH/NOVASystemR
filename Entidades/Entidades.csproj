@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="EntidadBase\EntidadBase.cs" />
+    <Compile Include="EntidadBase\EntidadResponse.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

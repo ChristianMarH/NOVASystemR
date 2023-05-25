@@ -1,4 +1,5 @@
 ﻿using AccesoDatos.Conexion;
+using LogicaNegocio.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;

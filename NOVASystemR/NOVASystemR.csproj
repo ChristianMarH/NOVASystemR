@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PermisosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -182,6 +182,10 @@
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
       <Project>{9E384E02-B383-4FEC-8C0E-244982EF1E4D}</Project>
       <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{F9DE44FA-F7C5-48D0-A32F-06FC1E799A2B}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
       <Project>{d93e62e6-5e1e-46f0-be8c-86fc1f4aa36e}</Project>
