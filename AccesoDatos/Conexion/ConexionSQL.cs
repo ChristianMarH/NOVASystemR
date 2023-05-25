@@ -6,7 +6,7 @@ namespace AccesoDatos.Conexion
 {
     public class ConexionSQL
     {
-        public string NombreConexion = "cxnDesa";
+        public string NombreConexion = "cxnDessa";
         public SqlConnection oConexion = new SqlConnection();
         public SqlCommand oComando;
         public SqlParameter oParametro;
