@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NovaRH\Honorarios\Personal.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Conexion\ConexionODBC.cs" />
     <Compile Include="Conexion\ConexionSQL.cs" />
