@@ -46,6 +46,7 @@
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WS_SAI\Seguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
@@ -56,6 +57,9 @@
       <Project>{f9de44fa-f7c5-48d0-a32f-06fc1e799a2b}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

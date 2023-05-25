@@ -46,6 +46,7 @@
     <Compile Include="EntidadBase\EntidadResponse.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAI\Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
