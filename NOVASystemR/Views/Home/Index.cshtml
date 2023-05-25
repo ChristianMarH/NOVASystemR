@@ -2,144 +2,264 @@
     ViewBag.Title = "Home Page";
 }
 
+<style>
+    .custom-table th, .custom-table td {
+        border: 1px solid #dee2e6;
+        padding: 8px;
+    }
 
-<h2>VENTANA DE RECETA</h2>
+    .text-right {
+        text-align: right;
+    }
 
-<div class="row">
- 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="panel with-nav-tabs ">
-           
-            <div class="panel-body">
-                <div class="tab-content">
-                    <!--Sección de NOTA MÉDICA-->
-                    <div class="tab-pane fade in active" id="tab1default">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <div id="DivAlergias" class="panel-body text-left">
-                                </div>
-                            </div>
+    .th-center {
+        vertical-align: middle;
+    }
+    .no-resize {
+        resize: none;
+    }
 
-                    
-                        </div>
-                        <!--Inicio-->
-              
-                        
+</style>
 
-                        <div class="row">
-                            <!--Datos del Paciente-->
-                            <div class="col-md-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="panel-tools">
-                                            <a class="showhide"><i class="fa fa-chevron-down"></i></a>
-                                        </div>
-                                        <label>Datos del paciente</label>
-                                    </div>
-                                    <div class="panel-body">
+<div class="container">
+    <h1 class="text-right">Receta Médica</h1>
+    <h4 class="text-right">Fecha</h4>
+    <!-- Sección Datos del Paciente -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Sección Datos del Paciente -->
+            <h3>Datos del Paciente</h3>
+            <table class="table custom-table">
+                <tbody>
+                    <tr>
+                        <th style="vertical-align: middle;">Nombre:</th>
+                        <td colspan="3"><input type="text" id="txtNombrePaciente" class="form-control" placeholder="Nombre del paciente"></td>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">No. Socio:</th>
+                        <td><input type="text" class="form-control" id="txtNoSocio" placeholder="Número de socio"></td>
 
-                                        <div class="row">
-                                            <div class="col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    Nombre:
-                                                    <input type="text" name="" id="txtNombrePaciente" class="form-control" value="" />
-                                                </div>
-                                            </div>
+                        <th style="vertical-align: middle;">Cve. Familiar:</th>
+                        <td><input type="text" class="form-control" id="txtCveFamiliar" placeholder="Clave familiar"></td>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">Fecha de Nacimiento:</th>
+                        <td colspan="3"><input type="date" id="dtFechaNacimiento" class="form-control"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <!-- Sección Datos del Médico -->
+            <h3>Datos del Médico</h3>
+            <table class="table custom-table">
+                <tbody>
+                    <tr>
+                        <th style="vertical-align: middle;">Nombre:</th>
+                        <td colspan="3"><input type="text" id="txtNombreMedico" class="form-control" placeholder="Nombre del médico" disabled></td>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">Especialidad:</th>
 
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    No. Socio:
-                                                     <input type="text" name="" id="txtNoSocio" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    Cve. Familiar:
-                                                    <input type="text" name="" id="txtCveFamiliar" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                        </div>
+                        <td colspan="3">
+                            <select class="form-control" id="cboEspecialidad">
+                                <option value="">Seleccionar especialidad médica</option>
+                                <option value="cardiología">Cardiología</option>
+                                <option value="dermatología">Dermatología</option>
+                                <option value="gastroenterología">Gastroenterología</option>
+                                <!-- Agrega más opciones aquí -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">Cédula Profesional:</th>
+                        <td><input type="text" class="form-control" id="txtCedProfesional" placeholder="Ced. Profesional" disabled></td>
 
-                                        <div class="row">
-                                            <div class="col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    Fecha de nacimiento:
-                                                    <input type="date" class="form-control" id="fechaNacimiento">
-                                                </div>
-                                            </div>
-                                         
-                                        </div>
-                                       
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Datos del Medico-->
-                            <div class="col-md-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <div class="panel-tools">
-                                            <a class="showhide"><i class="fa fa-chevron-down"></i></a>
-                                        </div>
-                                        <label>Diagnósticos Adicionales</label>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    Nombre:
-                                                    <input type="text" id="txtNombreMedico" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    Especialidad:
-                                                    <input type="text" id="txtEspecialidad" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    Cédula Profesional:
-                                                    <input type="text" id="txtCedulaProfesional" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    Universidad:
-                                                    <input type="text" id="txtUniversidadCedula" class="form-control" value="" />
-                                                </div>
-                                            </div>
+                        <th style="vertical-align: middle;">Universidad:</th>
+                        <td><input type="text" class="form-control" id="txtUniCedProf" placeholder="Universidad" disabled></td>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle;">Cédula Especialidad:</th>
+                        <td><input type="text" class="form-control" id="txtCedEspecialidad" placeholder="Ced. Especialidad" disabled></td>
 
-                                            <div class="col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    Cédula Especialidad:
-                                                    <input type="text" id="txtCedulaEspecialidad" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12">
-                                                <div class="form-group">
-                                                    Universidad:
-                                                    <input type="text" id="txtCedulaEspecialidad" class="form-control" value="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-                    <!--Fin-->
-                    <br />
-               
-           
-                </div>
-
-             
-            </div>
-
+                        <th style="vertical-align: middle;">Universidad:</th>
+                        <td><input type="text" class="form-control" id="txtUniCedEsp" placeholder="Universidad" disabled></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
+
+    <!-- Sección de Captura -->
+
+    <table class="table custom-table">
+        <tbody>
+            <tr>
+                <th style="vertical-align: middle; width: 180px;">Cantidad a Surtir:</th>
+                <th>
+                    <label>PRESCRPCIÓN</label>
+                    </br>
+                    <label style="color: gray;">INDICAR EL NOMBRE COMERCIAL, GENÉRICO, PRESENTACIÓN, DOSIS, FRECUENCIA, VÍA DE ADMINISTRACIÓN Y DURACIÓN DEL TRATAMIENTO</label>
+
+                </th>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td><input type="text" class="form-control" id="txtCantSurt1" placeholder="Cantidad a surtir"></td>
+                <td><textarea class="form-control no-resize" id="txtPrescripcion1" rows="1" placeholder="Prescripción médica"></textarea></td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td><input type="text" class="form-control" id="txtCantSurt2" placeholder="Cantidad a surtir"></td>
+                <td><textarea class="form-control no-resize" id="txtPrescripcion2" rows="1" placeholder="Prescripción médica"></textarea></td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td><input type="text" class="form-control" id="txtCantSurt3" placeholder="Cantidad a surtir"></td>
+                <td><textarea class="form-control no-resize" id="txtPrescripcion3" rows="1" placeholder="Prescripción médica"></textarea></td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td><input type="text" class="form-control" id="txtCantSurt4" placeholder="Cantidad a surtir"></td>
+                <td><textarea class="form-control no-resize" id="txtPrescripcion4" rows="1" placeholder="Prescripción médica"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Botón de enviar -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </div>
+
+    <!--<div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel with-nav-tabs ">
+
+                <div class="panel-body">
+                    <div class="tab-content">-->
+    <!--Sección de NOTA MÉDICA-->
+    <!--<div class="tab-pane fade in active" id="tab1default">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div id="DivAlergias" class="panel-body text-left">
+                </div>
+            </div>
+
+
+        </div>-->
+    <!--Inicio-->
+    <!--<div class="row">-->
+    <!--Datos del Paciente-->
+    <!--<div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-tools">
+                    <a class="showhide"><i class="fa fa-chevron-down"></i></a>
+                </div>
+                <label>Datos del paciente</label>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            Nombre:
+                            <input type="text" name="" id="txtNombrePaciente" class="form-control" value="" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            No. Socio:
+                             <input type="text" name="" id="txtNoSocio" class="form-control" value="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            Cve. Familiar:
+                            <input type="text" name="" id="txtCveFamiliar" class="form-control" value="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            Fecha de nacimiento:
+                            <input type="date" class="form-control" id="fechaNacimiento">
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>-->
+    <!--Datos del Medico-->
+    <!--<div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-down"></i></a>
+                        </div>
+                        <label>Diagnósticos Adicionales</label>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    Nombre:
+                                    <input type="text" id="txtNombreMedico" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    Especialidad:
+                                    <input type="text" id="txtEspecialidad" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    Cédula Profesional:
+                                    <input type="text" id="txtCedulaProfesional" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    Universidad:
+                                    <input type="text" id="txtUniversidadCedula" class="form-control" value="" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    Cédula Especialidad:
+                                    <input type="text" id="txtCedulaEspecialidad" class="form-control" value="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    Universidad:
+                                    <input type="text" id="txtCedulaEspecialidad" class="form-control" value="" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+    <!--Fin-->
+    <!--<br />
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>-->
 
