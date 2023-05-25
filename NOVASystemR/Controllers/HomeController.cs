@@ -14,34 +14,60 @@ namespace NOVASystemR.Controllers
 
         public ActionResult Index()
         {
-
-            bool conexionExitosa = conexion.Conectar();
-            if (conexionExitosa)
+            if (HttpContext.Session["Permisos"] == null)
             {
-                ViewBag.Mensaje = "Conexión exitosa a la base de datos";
-            }
-            else
-            {
-                ViewBag.Mensaje = "Error al conectar a la base de datos";
+                if (HttpContext.Session["AutenticacionCorrecta"] != null && (bool)HttpContext.Session["AutenticacionCorrecta"])
+                    return RedirectToAction("SinPermiso", "Home");
+                return RedirectToAction("Logout", "Home");
             }
 
-            conexion.Desconectar();
+            bool esmedico = false;
+
+            if (HttpContext.Session["Permisos"] != null)
+            {
+                var res = LogicaNegocio.NovaRH.Honorarios.Configuracion.Consultar(SqlOpciones.Seleccionar, "Perfil");
+
+                HttpContext.Session["Perfiles"] = res;
+
+                esmedico = (from i in ((IList<PermisosModel>)HttpContext.Session["Permisos"]).ToList()
+                            join r in res on i.PerfilId.ToString().Trim() equals r.Valor.Trim()
+                            where r.Nombre == "PerfilMedico"
+                            select i.PerfilId).FirstOrDefault() != 0;
+            }
+
+            if (esmedico)
+            {
+                TempData["RedireccionMedico"] = true;
+                DateTime fecha = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                return RedirectToAction("Index", "ReporteMensual", new { Area = "ReporteMensual", pPersonalId = GetUsuarioId(), pPeriodoMes = DateTime.Today, pFechaDesde = fecha, pFechaHasta = fecha.AddMonths(1).AddDays(-1) });
+            }
+
+            #region VARIABLES DE MENU
+            TempData["lblNombre"] = GetNombreUsuario();
+            if (HttpContext.Session["Foto"] != null)
+                TempData["imgFoto"] = "data:image/jpg;base64," + Convert.ToBase64String((byte[])HttpContext.Session["Foto"]);
+            #endregion
 
             return View();
         }
+        //public ActionResult Index()
+        //{
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //    bool conexionExitosa = conexion.Conectar();
+        //    if (conexionExitosa)
+        //    {
+        //        ViewBag.Mensaje = "Conexión exitosa a la base de datos";
+        //    }
+        //    else
+        //    {
+        //        ViewBag.Mensaje = "Error al conectar a la base de datos";
+        //    }
 
-            return View();
-        }
+        //    conexion.Desconectar();
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //    return View();
+        //}
 
-            return View();
-        }
+
     }
 }
