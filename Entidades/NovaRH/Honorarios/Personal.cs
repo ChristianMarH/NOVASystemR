@@ -18,39 +18,39 @@ namespace Entidades.NovaRH.Honorarios
         public Int32 CoordinadorId { get { return _CoordinadorId; } set { _CoordinadorId = value; } }
 
         String _PersonalDescripcion;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String PersonalDescripcion { get { return _PersonalDescripcion; } set { _PersonalDescripcion = value; } }
 
         String _Paterno;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String Paterno { get { return _Paterno; } set { _Paterno = value; } }
 
         String _Materno;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String Materno { get { return _Materno; } set { _Materno = value; } }
 
         String _Nombre;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String Nombre { get { return _Nombre; } set { _Nombre = value; } }
 
         String _CURP;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String CURP { get { return _CURP; } set { _CURP = value; } }
 
         String _CedulaProfesional;
-        [StringLength(50)]
+        [MaxLength(50)]
         public String CedulaProfesional { get { return _CedulaProfesional; } set { _CedulaProfesional = value; } }
 
         String _RegistroSSA;
-        [StringLength(50)]
+        [MaxLength(50)]
         public String RegistroSSA { get { return _RegistroSSA; } set { _RegistroSSA = value; } }
 
         String _CodigoUsuario;
-        [StringLength(50)]
+        [MaxLength(50)]
         public String CodigoUsuario { get { return _CodigoUsuario; } set { _CodigoUsuario = value; } }
 
         String _UsuarioRed;
-        [StringLength(100)]
+        [MaxLength(100)]
         public String UsuarioRed { get { return _UsuarioRed; } set { _UsuarioRed = value; } }
 
         Int16 _PersonalTipoId;
@@ -78,11 +78,11 @@ namespace Entidades.NovaRH.Honorarios
         public DateTime? SuspensionHasta { get { return _SuspensionHasta; } set { _SuspensionHasta = value; } }
 
         String _CodigoSAP;
-        [StringLength(20)]
+        [MaxLength(20)]
         public String CodigoSAP { get { return _CodigoSAP; } set { _CodigoSAP = value; } }
 
         String _PersonalSAP;
-        [StringLength(20)]
+        [MaxLength(20)]
         public String PersonalSAP { get { return _PersonalSAP; } set { _PersonalSAP = value; } }
 
         String _MedidaTipoId;
