@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace NOVASystemR.Controllers
 {
@@ -75,6 +76,31 @@ namespace NOVASystemR.Controllers
             model.AutenticacionCorrecta = true;
 
             return View(model);
+        }
+
+
+        [AllowAnonymous]
+        public ActionResult Logout()
+        {
+            foreach (var cookie in HttpContext.Request.Cookies.AllKeys)
+            {
+                HttpContext.Request.Cookies.Remove(cookie);
+            }
+            foreach (var cookie in HttpContext.Response.Cookies.AllKeys)
+            {
+                HttpContext.Response.Cookies.Remove(cookie);
+            }
+
+            HttpContext.Request.Cookies.Clear();
+            HttpContext.Response.Cookies.Clear();
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            SetNombreUsuario("");
+            SetUsuarioId(-1);
+            FormsAuthentication.SignOut();
+
+            return Redirect("Login");
         }
 
         //public ActionResult Index()

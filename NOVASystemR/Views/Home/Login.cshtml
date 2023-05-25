@@ -6,14 +6,13 @@
 
 @section Scripts {
     <script type="text/javascript">
-        $(document).ready(function () {
-            if ('@Model.Dominio' != 'TERNIUM') {
-
-                $("#lblDominio").hide();
-                $("#Dominio").hide();
-                $("#valDominio").hide();
-            }
-           });
+       document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("Dominio").value !== 'TERNIUM') {
+        document.getElementById("lblDominio").style.display = "none";
+        document.getElementById("Dominio").style.display = "none";
+        document.getElementById("valDominio").style.display = "none";
+    }
+});
     </script>
 }
 

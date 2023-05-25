@@ -1,0 +1,176 @@
+﻿@import "common/_paletaColores.scss";
+@import "layout/_layout.scss";
+@import "layout/_wrapper.scss";
+@import "layout/_header.scss";
+@import "common/_modal.scss";
+@import "layout/_leftmenu.scss";
+
+.indicador-barra {
+    height: auto;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
+}
+
+.indicador-barra-item {
+    display: inline-block;
+    border: .5px solid lightgray;
+    border-top: none;
+    width: calc(100vw - 20px);
+}
+
+.indicador-barra > .indicador-barra-item:first-child {
+    border-top: .5px solid lightgray;
+}
+
+@media (min-width: 930px) {
+    .indicador-barra-item {
+        margin: 5px;
+        padding: 5px;
+        border: none;
+        width: auto;
+    }
+
+    .indicador-barra > .indicador-barra-item:first-child {
+        border-top: none;
+    }
+
+    .indicador-barra > .indicador-barra-item:not(:last-child) {
+        border-right: .5px solid lightgray;
+    }
+}
+
+.indicador-barra-label {
+    display: block;
+    font-size: 12px;
+    color: gray;
+}
+
+.indicador-barra-main {
+    display: block;
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+.indicador-barra-otro {
+    display: inline-block;
+    font-size: 10px;
+    color: gray;
+}
+
+#btnSolicitarTarde, #btnSolicitar {
+    margin-top: 5px;
+}
+
+.cancel-btn-cell {
+    text-align: center;
+}
+
+.btn-cancel-solicitud {
+    padding: 2px 10px;
+}
+
+.btn-cancel-solicitud:before {
+    content: "Cancelar";
+}
+
+.btn-print-solicitud:before {
+    content: "Imprimir";
+}
+
+td.child > table > tr > td {
+    padding-bottom: 10px;
+}
+
+/*.accion-detail-view  .btn-cancel-solicitud{
+    width:20px;
+    height:20px;
+    border-radius:5px;
+    padding:0;
+}
+.accion-detail-view  .btn-cancel-solicitud:before {
+    content: '\00d7';
+}*/
+
+#ModalForm > .modal-dialog {
+    width: 400px;
+}
+
+#inputBirthDay {
+    width: 340px;
+}
+
+.input-group.date {
+    width: 100%;
+}
+
+$foreColor: #34495e;
+$highlightForeColor: #3f5872;
+
+.pagination > .paginate_button > a {
+    background-color: white;
+    border-color: $grayLight;
+    color: $foreColor;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:hover {
+    color: $grayLight;
+}
+
+.pagination > .active > a {
+    background-color: $foreColor;
+    border-color: $foreColor;
+    color: white;
+}
+
+.pagination > .active > a:hover {
+    background-color: $highlightForeColor;
+    border-color: $foreColor;
+    color: white;
+}
+
+[data-dt-row] > td:nth-child(2) {
+    text-align: right;
+    padding-left: 5px;
+}
+
+#ModalSeleccion .modal-body button {
+    display: block;
+    white-space: normal;
+    max-width: 200px;
+}
+
+.modal-header button.close {
+    text-align: right;
+}
+
+.folio-cell.sorting_1:before {
+    background-color: $foreColor !important;
+}
+
+.folio-cell.sorting_1:before:hover {
+    background-color: $highlightForeColor !important;
+}
+
+.folio-cell.sorting_asc::after {
+    content:"" !important;
+    display: none  !important;
+}
+
+#divTarde{
+    /*border-top: .5px solid lightgray;*/
+    padding-top: 25px;
+}
+
+
+
+.home-button{
+    font-size:25px;
+    cursor:pointer;
+}
+
+.home-button:hover:before{
+    border-bottom:5px solid red;
+}

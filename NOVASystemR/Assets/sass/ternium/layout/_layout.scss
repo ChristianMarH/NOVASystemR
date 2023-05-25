@@ -1,0 +1,20 @@
+﻿// Quitar antes de lanzar al desarrollo
+
+/*@import "_paletaColores.scss";*/
+
+// Fin quitar antes de lanzar a desarrollo
+
+.color-line {
+    background: $backgroundColor;
+    height: 6px;
+    background-image: -webkit-linear-gradient(left, $gray1, $gray2, $gray3);
+    background-image: -moz-linear-gradient(left,$gray1, $gray2, $gray3);
+    background-image: linear-gradient(to right, $gray1, $gray2, $gray3);
+    background-size: 100% 6px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.spinner > div {
+    background-color: $warning2;
+}

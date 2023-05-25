@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
+      <HintPath>packages\BundleTransformer.Core.1.10.0\lib\net40\BundleTransformer.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,16 +138,88 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\Plugins\bootstrap\bootstrap.css" />
+    <Content Include="Assets\css\Plugins\fontawesome\css\font-awesome.css" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\css\Plugins\sweetalert\sweet-alert.css" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\style.ternium.css" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Assets\Images\anonymous.png" />
+    <Content Include="Assets\Images\Cancel.png" />
+    <Content Include="Assets\Images\Cancelar.png" />
+    <Content Include="Assets\Images\foto_anonimo.jpg" />
+    <Content Include="Assets\Images\green.png" />
+    <Content Include="Assets\Images\green_circle.svg" />
+    <Content Include="Assets\Images\loading.gif" />
+    <Content Include="Assets\Images\Logo.jpg" />
+    <Content Include="Assets\Images\noencontrado.jpg" />
+    <Content Include="Assets\Images\notimage.png" />
+    <Content Include="Assets\Images\pdf.png" />
+    <Content Include="Assets\Images\progressbar.gif" />
+    <Content Include="Assets\Images\red_circle.svg" />
+    <Content Include="Assets\sass\homer\style.css" />
+    <Content Include="Assets\sass\homer\style.min.css" />
+    <Content Include="Assets\sass\ternium\style.ternium.css" />
+    <Content Include="Assets\sass\ternium\style.ternium.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\nova.css" />
+    <Content Include="Content\SiteStyleRadio.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\sass\ternium\style.ternium.css.map" />
+    <Content Include="Assets\sass\ternium\style.ternium.scss" />
+    <Content Include="Assets\sass\ternium\common\_modal.scss" />
+    <Content Include="Assets\sass\ternium\common\_paletaColores.scss" />
+    <Content Include="Assets\sass\ternium\layout\_header.scss" />
+    <Content Include="Assets\sass\ternium\layout\_layout.scss" />
+    <Content Include="Assets\sass\ternium\layout\_leftmenu.scss" />
+    <Content Include="Assets\sass\ternium\layout\_wrapper.scss" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\css\Plugins\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="Assets\sass\homer\style.css.map" />
+    <Content Include="Assets\sass\homer\style.scss" />
+    <Content Include="Assets\sass\homer\_alerts.scss" />
+    <Content Include="Assets\sass\homer\_blog.scss" />
+    <Content Include="Assets\sass\homer\_buttons.scss" />
+    <Content Include="Assets\sass\homer\_calendar.scss" />
+    <Content Include="Assets\sass\homer\_chat.scss" />
+    <Content Include="Assets\sass\homer\_contact.scss" />
+    <Content Include="Assets\sass\homer\_dropdown.scss" />
+    <Content Include="Assets\sass\homer\_fonts.scss" />
+    <Content Include="Assets\sass\homer\_forum.scss" />
+    <Content Include="Assets\sass\homer\_grid.scss" />
+    <Content Include="Assets\sass\homer\_icheck.scss" />
+    <Content Include="Assets\sass\homer\_landing.scss" />
+    <Content Include="Assets\sass\homer\_layout.scss" />
+    <Content Include="Assets\sass\homer\_lists.scss" />
+    <Content Include="Assets\sass\homer\_loader.scss" />
+    <Content Include="Assets\sass\homer\_login.scss" />
+    <Content Include="Assets\sass\homer\_mailbox.scss" />
+    <Content Include="Assets\sass\homer\_margins.scss" />
+    <Content Include="Assets\sass\homer\_modal.scss" />
+    <Content Include="Assets\sass\homer\_nestable_list.scss" />
+    <Content Include="Assets\sass\homer\_panels.scss" />
+    <Content Include="Assets\sass\homer\_progress_bar.scss" />
+    <Content Include="Assets\sass\homer\_projects.scss" />
+    <Content Include="Assets\sass\homer\_social_board.scss" />
+    <Content Include="Assets\sass\homer\_tabs.scss" />
+    <Content Include="Assets\sass\homer\_text_editor.scss" />
+    <Content Include="Assets\sass\homer\_timeline.scss" />
+    <Content Include="Assets\sass\homer\_tooltip.scss" />
+    <Content Include="Assets\sass\homer\_tour.scss" />
+    <Content Include="Assets\sass\homer\_various.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -167,6 +245,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_Layout_Blank.cshtml" />
+    <Content Include="Views\Shared\_Header_Blank.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

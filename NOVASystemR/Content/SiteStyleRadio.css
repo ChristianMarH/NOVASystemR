@@ -1,0 +1,109 @@
+﻿.grupo-control-radio-personalizado {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+
+.radio-personalizado {
+    display: none;
+}
+
+.control-radio-personalizado:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 2px solid #dae1ea;
+    background: #fff;
+    cursor: pointer;
+}
+
+/*.radio-personalizado:checked + .control-radio-personalizado:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        width: 30px;
+        margin-left: auto;
+        height: 30px;
+        border-radius: 100%;
+        border: 4px solid #fff;
+        background: green;
+    }*/
+
+.radio-personalizado:checked + .control-radio-personalizado:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 30px;
+    margin-left: auto;
+    height: 30px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    /*background: green;*/
+    /*background-image: url(../../../../Assets/images/green.png);*/
+    background-image: url('../Assets/images/green.png');
+    background-position: -168px 0;
+}
+
+
+/*.radio-personalizado:checked + .control-radio-personalizado-imagen:before {
+        background-image: url('https://png.pngtree.com/png-vector/20190124/ourlarge/pngtree-x-red-cross-png-picture-red-png-image_550969.jpg');
+        background-image: url(../../../../Assets/images/Cancelar.png);
+        background-size: 20px 20px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+    }*/
+
+.radio-personalizado:checked + .control-radio-personalizado-imagen:before {
+    /*background-image: url(../../../../Assets/images/Cancelar.png);*/
+    background-image: url('../Assets/images/Cancelar.png');
+    background-size: 25px 25px;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    background-position: -150px 0;
+    margin-left: auto;
+}
+
+.control-radio-personalizado-imagen:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 2px solid #dae1ea;
+    background: #fff;
+    cursor: pointer;
+}
+
+/*div.iradio.iradio_square-green.checked {
+        box-shadow: inset 0 0 0 3px #fff;
+        background: red;
+    }*/
+
+/*.Azul {
+        box-shadow: inset 0 0 0 3px #fff;
+        background: blue;
+    }*/
