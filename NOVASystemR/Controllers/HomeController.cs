@@ -52,6 +52,31 @@ namespace NOVASystemR.Controllers
 
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult Login()
+        {
+            if (HttpContext.Session["AutenticacionCorrecta"] != null && (bool)HttpContext.Session["AutenticacionCorrecta"])
+            {
+                return RedirectToAction("SinPermiso", "Home");
+            }
+            LoginModel model = new LoginModel();
+            var strDominioAlt = System.Configuration.ConfigurationManager.AppSettings["Dominio"];
+
+            if (strDominioAlt == "TERNIUM")
+            {
+                model.Dominio = Environment.UserDomainName;
+            }
+            else
+            {
+                model.Dominio = strDominioAlt;
+            }
+            //model.CuentaRed = Environment.UserName;
+            model.AutenticacionCorrecta = true;
+
+            return View(model);
+        }
+
         //public ActionResult Index()
         //{
 
