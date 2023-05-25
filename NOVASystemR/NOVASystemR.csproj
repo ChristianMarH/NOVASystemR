@@ -118,8 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseControllerMethods.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\BaseControllerMethods\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -180,11 +186,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
-      <Project>{9E384E02-B383-4FEC-8C0E-244982EF1E4D}</Project>
+      <Project>{9e384e02-b383-4fec-8c0e-244982ef1e4d}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{F9DE44FA-F7C5-48D0-A32F-06FC1E799A2B}</Project>
+      <Project>{f9de44fa-f7c5-48d0-a32f-06fc1e799a2b}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">

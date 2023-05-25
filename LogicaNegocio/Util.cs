@@ -1,4 +1,5 @@
-﻿using Entidades.EntidadBase;
+﻿using Entidades;
+using Entidades.EntidadBase;
 using LogicaNegocio.Enum;
 using System;
 using System.Collections.Generic;

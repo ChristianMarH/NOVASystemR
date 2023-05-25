@@ -1,5 +1,6 @@
 ﻿using AccesoDatos.Conexion;
 using LogicaNegocio.Enum;
+using NOVASystemR.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace NOVASystemR.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         ConexionSQL conexion = new ConexionSQL();
 

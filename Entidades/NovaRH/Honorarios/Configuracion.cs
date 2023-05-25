@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.NovaRH.Honorarios
 {
-    public class Configuracion : EntidadBase
+    public class Configuracion : EntidadBase.EntidadBase
     {
         private string _vcNombre;
         private string _vcDescripcion;
