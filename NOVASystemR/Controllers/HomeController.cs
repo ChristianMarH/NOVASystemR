@@ -17,9 +17,10 @@ namespace NOVASystemR.Controllers
         ConexionSQL conexion = new ConexionSQL();
 
 
+        [AllowAnonymous]
         public ActionResult Index(MedicoModel model)
         {
-            if (HttpContext.Session["Permisos"] == null)
+            if (HttpContext.Session["Permisos"] == null || model.NombreMedico == null)
             {
                 if (HttpContext.Session["AutenticacionCorrecta"] != null && (bool)HttpContext.Session["AutenticacionCorrecta"])
                     return RedirectToAction("SinPermiso", "Home");
@@ -116,11 +117,23 @@ namespace NOVASystemR.Controllers
                     oUsuario.UsuarioId = (LogicaNegocio.NovaRH.Honorarios.Personal.Consultar(SqlOpciones.Actual, 0, string.Empty, 0, 0, model.CuentaRed).FirstOrDefault() ?? new Entidades.NovaRH.Honorarios.Personal() { PersonalId = oUsuario.UsuarioId }).PersonalId;
                     var Correo = LogicaNegocio.NovaRH.Honorarios.Medico.Consultar(SqlOpciones.Actual, model.CuentaRed);
 
+                    if (Correo.Count <= 0)
+                    {
+                        return RedirectToAction("SinPermiso", "Home");
+                    }
+
                     MedicoModel MedicoData = new MedicoModel()
                     {
                         IdPersonal = Correo[0].IdPersonal,
-                        NombreMedico = Correo[0].NombreMedico
+                        NombreMedico = Correo[0].NombreMedico,
+                        Especialidad = Correo[0].Especialidad,
+                        Universidad = Correo[0].Universidad,
+                        CedulaProfesional = Correo[0].CedulaProfesional,
+                        UniversidadEspecialidad = Correo[0].UniversidadEspecialidad,
+                        CedulaEspecialidad = Correo[0].CedulaEspecialidad,
+                        Estatus = Correo[0].Estatus
                     };
+
 
                     SetUsuarioId(oUsuario.UsuarioId);
                     SetNombreUsuario(oUsuario.NombreCompleto);
@@ -164,6 +177,11 @@ namespace NOVASystemR.Controllers
             FormsAuthentication.SignOut();
 
             return Redirect("Login");
+        }
+
+        public ActionResult SinPermiso()
+        {
+            return View();
         }
 
         //public ActionResult Index()

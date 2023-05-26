@@ -74,6 +74,7 @@ namespace NOVASystemR
             "~/Assets/js/Plugins/bootstrapwizard/jquery-latest.js",
             "~/Assets/js/Plugins/bootstrapwizard/jquery.bootstrap.wizard.js",
             "~/Scripts/helper.js",
+            "~/Scripts/RecetaMedica.js",
             "~/Assets/js/Plugins/validate/jquery-validate.js",
             "~/Assets/js/Plugins/validate/localization/messages_es.js"));
         }

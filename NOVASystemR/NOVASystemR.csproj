@@ -147,6 +147,7 @@
     <Content Include="Assets\css\style.ternium.css" />
     <Content Include="Assets\fonts\pe-icon-7-stroke\css\helper.css" />
     <Content Include="Assets\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
     <Content Include="Assets\Images\anonymous.png" />
     <Content Include="Assets\Images\Cancel.png" />
     <Content Include="Assets\Images\Cancelar.png" />
@@ -221,6 +222,9 @@
     <Content Include="Assets\sass\homer\_tooltip.scss" />
     <Content Include="Assets\sass\homer\_tour.scss" />
     <Content Include="Assets\sass\homer\_various.scss" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Assets\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -232,6 +236,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\RecetaMedica.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
