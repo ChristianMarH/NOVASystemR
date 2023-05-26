@@ -16,6 +16,7 @@ namespace LogicaNegocio
            
             DataList.Add(typeof(Entidades.NovaRH.Honorarios.Configuracion), typeof(AccesoDatos.NovaRH.Honorarios.Configuracion));
             DataList.Add(typeof(Entidades.NovaRH.Honorarios.Personal), typeof(AccesoDatos.NovaRH.Honorarios.Personal));
+            DataList.Add(typeof(Entidades.NovaRH.Honorarios.Medico), typeof(AccesoDatos.NovaRH.Honorarios.));
 
             dynamic valor;
 

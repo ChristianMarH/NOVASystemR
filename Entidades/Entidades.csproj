@@ -51,6 +51,7 @@
     <Compile Include="EntidadBase\EntidadResponse.cs" />
     <Compile Include="EntidadBase\EntidadResponseModel.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
+    <Compile Include="NovaRH\Honorarios\Medico.cs" />
     <Compile Include="NovaRH\Honorarios\Personal.cs" />
     <Compile Include="NovaRH\Honorarios\StringLengthAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

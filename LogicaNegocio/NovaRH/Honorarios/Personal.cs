@@ -36,17 +36,17 @@ namespace LogicaNegocio.NovaRH.Honorarios
 
             DataSet ds = Util.Consultar(pOpcion, oE).Resultado;
 
-            List<Entidades.NovaRH.Honorarios.Personal> res = new List<Entidades.NovaRH.Honorarios.Personal>();
-            Entidades.NovaRH.Honorarios.Personal item = null;
+            List<Entidades.NovaRH.Honorarios.Medico> res = new List<Entidades.NovaRH.Honorarios.Medico>();
+            Entidades.NovaRH.Honorarios.Medico item = null;
 
             foreach (DataTable table in ds.Tables)
             {
                 foreach (DataRow dr in table.Rows)
                 {
-                    item = new Entidades.NovaRH.Honorarios.Personal();
+                    item = new Entidades.NovaRH.Honorarios.Medico();
 
-                    if (dr.Table.Columns.Contains("PersonalId"))
-                        item.PersonalId = Int32.Parse(dr["PersonalId"].ToString());
+                    if (dr.Table.Columns.Contains("IdPersonal"))
+                        item.IdPersonal = Int32.Parse(dr["IdPersonal"].ToString());
 
                     if (dr.Table.Columns.Contains("PersonalDescripcion"))
                         item.PersonalDescripcion = dr["PersonalDescripcion"].ToString();

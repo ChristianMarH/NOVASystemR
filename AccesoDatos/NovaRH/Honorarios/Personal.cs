@@ -22,41 +22,10 @@ namespace AccesoDatos.NovaRH.Honorarios
             try
             {
                 DataSet dsResultado = new DataSet();
-                oComando.CommandText = "Honorarios.spPersonal_Consultar";
+                oComando.CommandText = "SpValidaUsuario";
                 oComando.CommandType = CommandType.StoredProcedure;
 
-                oComando.Parameters.Clear();
-                oParametro = new SqlParameter("@Opcion", SqlDbType.SmallInt)
-                {
-                    Value = Opcion
-                };
-                oComando.Parameters.Add(oParametro);
-
-                oParametro = new SqlParameter("@PersonalId", SqlDbType.Int)
-                {
-                    Value = oBE.PersonalId
-                };
-                oComando.Parameters.Add(oParametro);
-
-                oParametro = new SqlParameter("@PersonalDescripcion", SqlDbType.VarChar)
-                {
-                    Value = oBE.PersonalDescripcion
-                };
-                oComando.Parameters.Add(oParametro);
-
-                oParametro = new SqlParameter("@Baja", SqlDbType.Bit)
-                {
-                    Value = oBE.Baja
-                };
-                oComando.Parameters.Add(oParametro);
-
-                oParametro = new SqlParameter("@FiltroPersonal", SqlDbType.Int)
-                {
-                    Value = oBE.FiltroPersonal
-                };
-                oComando.Parameters.Add(oParametro);
-
-                oParametro = new SqlParameter("@UsuarioRed", SqlDbType.VarChar)
+                oParametro = new SqlParameter("@SiglaRed", SqlDbType.VarChar)
                 {
                     Value = oBE.UsuarioRed
                 };
