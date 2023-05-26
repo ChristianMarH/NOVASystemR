@@ -52,6 +52,7 @@
     <Compile Include="Enum\SqlOpciones.cs" />
     <Compile Include="MapaClases.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
+    <Compile Include="NovaRH\Honorarios\Medico.cs" />
     <Compile Include="NovaRH\Honorarios\Personal.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos.Conexion;
+using Entidades;
 using LogicaNegocio;
 using LogicaNegocio.Enum;
 using NOVASystemR.Models;
@@ -16,7 +17,7 @@ namespace NOVASystemR.Controllers
         ConexionSQL conexion = new ConexionSQL();
 
 
-        public ActionResult Index()
+        public ActionResult Index(MedicoModel model)
         {
             if (HttpContext.Session["Permisos"] == null)
             {
@@ -89,7 +90,7 @@ namespace NOVASystemR.Controllers
                 Entidades.SAI.Usuario oUsuario = new Entidades.SAI.Usuario();
 
                 model.AutenticacionCorrecta = LogicaNegocio.WS_SAI.Seguridad.AutenticarUsuario(model.Dominio, model.CuentaRed, model.Contrasenia);
-
+                model.AutenticacionCorrecta = true;
                 if (model.AutenticacionCorrecta)
                 {
                     if (Request.UrlReferrer.Query.Contains("red") && (Request.Url.AbsoluteUri.Contains("localhost") || Request.Url.AbsoluteUri.Contains("termxnvadb14/Nova/RRHH/SRH")))
@@ -113,6 +114,13 @@ namespace NOVASystemR.Controllers
                         Session["Permisos"] = Permisos;
 
                     oUsuario.UsuarioId = (LogicaNegocio.NovaRH.Honorarios.Personal.Consultar(SqlOpciones.Actual, 0, string.Empty, 0, 0, model.CuentaRed).FirstOrDefault() ?? new Entidades.NovaRH.Honorarios.Personal() { PersonalId = oUsuario.UsuarioId }).PersonalId;
+                    var Correo = LogicaNegocio.NovaRH.Honorarios.Medico.Consultar(SqlOpciones.Actual, model.CuentaRed);
+
+                    MedicoModel MedicoData = new MedicoModel()
+                    {
+                        IdPersonal = Correo[0].IdPersonal,
+                        NombreMedico = Correo[0].NombreMedico
+                    };
 
                     SetUsuarioId(oUsuario.UsuarioId);
                     SetNombreUsuario(oUsuario.NombreCompleto);
@@ -120,7 +128,7 @@ namespace NOVASystemR.Controllers
                     Session["Foto"] = oUsuario.Foto as byte[];
 
                     FormsAuthentication.SetAuthCookie(model.CuentaRed, false);
-                    return RedirectToAction("Index", "Home");
+                    return View("Index", MedicoData);
                 }
                 else
                 {

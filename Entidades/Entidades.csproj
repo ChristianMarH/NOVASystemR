@@ -45,12 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EntidadBase\EntidadBase.cs" />
     <Compile Include="EntidadBase\EntidadJsonResponse.cs" />
     <Compile Include="EntidadBase\EntidadResponse.cs" />
     <Compile Include="EntidadBase\EntidadResponseModel.cs" />
     <Compile Include="NovaRH\Honorarios\Configuracion.cs" />
+    <Compile Include="NovaRH\Honorarios\Medico.cs" />
     <Compile Include="NovaRH\Honorarios\Personal.cs" />
     <Compile Include="NovaRH\Honorarios\StringLengthAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
