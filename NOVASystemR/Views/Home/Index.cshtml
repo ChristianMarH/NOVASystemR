@@ -20,6 +20,10 @@
         resize: none;
     }
 
+    #btnAgregar {
+        float: right;
+    }
+
 </style>
 
 <div class="container">
@@ -38,10 +42,16 @@
                     </tr>
                     <tr>
                         <th style="vertical-align: middle;">No. Socio:</th>
-                        <td><input type="text" class="form-control" id="txtNoSocio" placeholder="Número de socio"></td>
+                        <td>
+                            <input type="text" class="form-control" id="txtNoSocio" placeholder="Número de socio">
+                            <span id="errortxtNoSocio" style="color: red;"></span>
+                        </td>
 
                         <th style="vertical-align: middle;">Cve. Familiar:</th>
-                        <td><input type="text" class="form-control" id="txtCveFamiliar" placeholder="Clave familiar"></td>
+                        <td>
+                            <input type="text" class="form-control" id="txtCveFamiliar" placeholder="Clave familiar">
+                            <span id="errortxtCveFamiliar" style="color: red;"></span>
+                        </td>
                     </tr>
                     <tr>
                         <th style="vertical-align: middle;">Fecha de Nacimiento:</th>
@@ -127,12 +137,12 @@
         </tbody>
     </table>
 
-    <button id="btnAgregar" style="display: none;">Agregar otra línea</button>
+    <button id="btnAgregar" class="text-right" style="display: none;">Agregar otra línea</button>
 
 
 
     <!-- Botón de enviar -->
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" id="btnImprimir" class="btn btn-primary">Enviar</button>
 </div>
 
     <!--<div class="row">
