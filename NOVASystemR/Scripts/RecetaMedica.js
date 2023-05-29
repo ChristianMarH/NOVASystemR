@@ -5,6 +5,10 @@ var contador = 4;
 var btnImprimir = document.getElementById('btnImprimir');
 var txtCveFamiliar = document.getElementById('txtCveFamiliar');
 var txtNoSocio = document.getElementById('txtNoSocio');
+var txtNombrePaciente = document.getElementById('txtNombrePaciente');
+var dtFechaNacimiento = document.getElementById('dtFechaNacimiento');
+var txtCantSurt1 = document.getElementById('txtCantSurt1');
+var txtPrescripcion1 = document.getElementById('txtPrescripcion1');
 
 
 function verificarLlenadoPrescripciones() {
@@ -44,6 +48,11 @@ btnAgregar.addEventListener('click', function () {
 btnImprimir.addEventListener('click', function () {
 
     validarCampoVacio(txtCveFamiliar);
+    validarCampoVacio(txtNombrePaciente);
+    validarCampoVacio(txtNoSocio);
+    validarCampoVacio(dtFechaNacimiento);
+    validarCampoVacio(txtCantSurt1);
+    validarCampoVacio(txtPrescripcion1):
 });
 
 window.addEventListener('load', function () {
