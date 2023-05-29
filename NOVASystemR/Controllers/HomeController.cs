@@ -9,13 +9,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using SelectPdf;
+using System.Collections.Specialized;
+using System.Configuration;
 
 namespace NOVASystemR.Controllers
 {
     public class HomeController : BaseController
     {
         ConexionSQL conexion = new ConexionSQL();
-
+        private readonly NameValueCollection SelectHtmlSettings = (NameValueCollection)ConfigurationManager.GetSection("appSettings");
 
         [AllowAnonymous]
         public ActionResult Index(MedicoModel model)
@@ -183,6 +186,124 @@ namespace NOVASystemR.Controllers
         {
             return View();
         }
+
+        public ActionResult GeneratePdf(string nombrePaciente = "Nombre", string noSocio ="", string cveFamiliar="", string FechaNacimiento="", string nombreMedico="", string especialidad = "", string cedulaProfesional="", string uniCedProf="", string cedulaEspecialidad="", string uniCedEsp = "")
+        {
+            // Crear una instancia de HtmlToPdf
+            var converter = new HtmlToPdf();
+
+            //SelectPdf.GlobalProperties.LicenseKey = SelectHtmlSettings["LicenseKey"].ToString();
+
+            // Configurar opciones del PDF
+            converter.Options.PdfPageSize = PdfPageSize.A4;
+            converter.Options.PdfPageOrientation = PdfPageOrientation.Portrait;
+            converter.Options.WebPageWidth = 1024; // Ancho de la página en píxeles
+            converter.Options.WebPageHeight = 0; // Altura de la página en píxeles (0 para altura automática)
+
+            // Crear el contenido HTML para el PDF
+            string contenidoHtml = @"
+    <!DOCTYPE html>
+    <html>
+    <head>
+    </head>
+    <body>
+        <style>
+            .nova-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            .nova-table th,
+            .nova-table td {
+                padding: 8px;
+                border: 1px solid black;
+                text-align: left;
+            }
+
+            .nova-table th {
+                background-color: #f2f2f2;
+            }
+        </style>
+        <div class='table-responsive'>
+            <table class='nova-table table'>
+                <tbody>
+                    <tr>
+                        <td colspan='4' class='nova-table-head bg-info text-white'>DATOS DEL PACIENTE</td>
+                        <td colspan='4' class='nova-table-head bg-info text-white'>DATOS DEL MÉDICO</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2' rowspan='2'>Nombre:</td>
+                        <td colspan='2' rowspan='2'>"+ nombrePaciente +  @"</td>
+                        <td colspan='2'>Nombre:</td>
+                        <td colspan='2'>"+ nombreMedico + @"</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>Especialidad</td>
+                        <td colspan='2'>"+especialidad+@"</td>
+                    </tr>
+                    <tr>
+                        <td>No. Socio:</td>
+                        <td> "+noSocio+@"</td>
+                        <td>Cve. Familiar:</td>
+                        <td>"+cveFamiliar+@"</td>
+                        <td>Cédula Profesional</td>
+                        <td>"+cedulaProfesional+@"</td>
+                        <td>Universidad</td>
+                        <td>"+uniCedProf+@"</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>Fecha de nacimiento</td>
+                        <td colspan='2'>"+FechaNacimiento+@"</td>
+                        <td>Cédula Especialidad</td>
+                        <td>"+cedulaEspecialidad+@"</td>
+                        <td>Universidad</td>
+                        <td>"+uniCedEsp+@"</td>
+                    </tr>
+                    <tr>
+                        <td colspan='8'></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>CANTIDAD A SURTIR</td>
+                        <td colspan='6'>PRESCRIPCIÓN</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'></td>
+                        <td colspan='6'></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'></td>
+                        <td colspan='6'></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'></td>
+                        <td colspan='6'></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>";
+
+            // Realizar la conversión del contenido HTML en PDF
+            PdfDocument doc = converter.ConvertHtmlString(contenidoHtml);
+
+            // Guardar el PDF en una ubicación específica
+            string filePath = Server.MapPath("~/Content/GeneratedPdf.pdf");
+            doc.Save(filePath);
+            doc.Close();
+
+            // Descargar el PDF generado
+            return File(filePath, "application/pdf", "GeneratedPdf.pdf");
+        }
+
+
+
+
+
+
+
+
 
         //public ActionResult Index()
         //{

@@ -52,6 +52,9 @@
       <HintPath>packages\BundleTransformer.Core.1.10.0\lib\net40\BundleTransformer.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Select.Pdf, Version=22.2.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>packages\Select.Pdf.22.2.0\lib\net40\Select.Pdf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -139,6 +142,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\nova.css" />
     <Content Include="Assets\css\Plugins\bootstrap\bootstrap.css" />
     <Content Include="Assets\css\Plugins\fontawesome\css\font-awesome.css" />
     <Content Include="Assets\css\Plugins\fontawesome\fonts\fontawesome-webfont.svg" />

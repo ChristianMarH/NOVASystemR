@@ -1,0 +1,56 @@
+﻿.nova-btn-color {
+    color: #ffffff;
+    background-color: #34495e;
+    border-color: #34495e;
+}
+.nova-btn-color:hover {
+    color: #ffffff;
+    background-color: #495d71;
+    border-color: #495d71;
+}
+.nova-table-head {
+    background-color: #f8b82b;
+    color: #fff;
+}
+.nova-tap-menu-text {
+    color: #999;
+}
+.text-modal-title{
+    font-weight:bold;
+}
+
+.nova-btn-color:focus {
+    color: #ffffff;
+    background-color: #146cb7;
+    border-color: #146cb7;
+}
+.desactived-tab {
+    pointer-events: none;
+    color: #ccc;
+}
+.nova-btn-danger{
+    color: #ffffff;
+    background-color: #f8b82b;
+    border-color: #f8b82b;
+} 
+.div-hide{
+	display:none;
+}
+.div-show{
+	display:block;
+}
+table td {
+  word-wrap: break-word;
+}
+#grid td {
+  white-space:inherit;
+}
+
+.nova-span-btn-actualizar {
+    float: right; 
+    margin-top: -24px;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: 1px solid #ddd;
+    }
