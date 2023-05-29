@@ -52,7 +52,7 @@ btnImprimir.addEventListener('click', function () {
     validarCampoVacio(txtNoSocio);
     validarCampoVacio(dtFechaNacimiento);
     validarCampoVacio(txtCantSurt1);
-    validarCampoVacio(txtPrescripcion1):
+    validarCampoVacio(txtPrescripcion1);
 });
 
 window.addEventListener('load', function () {
