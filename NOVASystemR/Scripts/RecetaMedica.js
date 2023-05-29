@@ -5,6 +5,30 @@ var contador = 4;
 var btnImprimir = document.getElementById('btnImprimir');
 var txtCveFamiliar = document.getElementById('txtCveFamiliar');
 var txtNoSocio = document.getElementById('txtNoSocio');
+var fechaActual = new Date();
+
+var meses = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+];
+
+var dia = fechaActual.getDate();
+var mes = meses[fechaActual.getMonth()];
+var año = fechaActual.getFullYear();
+
+var fechaEnEspañol = dia + " de " + mes + " de " + año;
+
+document.getElementById('txtFechaActual').innerHTML = fechaEnEspañol;
 
 
 function verificarLlenadoPrescripciones() {
